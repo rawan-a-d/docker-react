@@ -16,4 +16,6 @@ before_install:
 # Commands to be executed to run the test suite
 script:
 		# -- --coverage: automatically exits when the test suite is done
-		- docker run rawanad/docker-react npm run test -- --coverage
+		#- docker run rawanad/docker-react npm run test -- --coverage
+		- docker run -e CI=true rawanad/docker-react npm run test
+
