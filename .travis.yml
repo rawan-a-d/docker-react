@@ -28,9 +28,9 @@ deploy:
     # environment specified on AWS
     env: 'Dockerreact-env'
     # in servies, search for S3 and choose the bucket based on location
-    bucker_name: 'elasticbeanstalk-us-east-1-609456652928'
+    bucket_name: 'elasticbeanstalk-us-east-1-609456652928'
     # app name
-    bucker_path: 'docker-react'
+    bucket_path: 'docker-react'
     # deploy when I push code to branch master
     on:
         branch: master
