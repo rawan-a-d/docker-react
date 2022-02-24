@@ -1,21 +1,20 @@
 # CI Tool (https://app.travis-ci.com/)
-language: generic 
+language: generic
 
 # Super user level permission
 sudo: required
 
 # We need a copy of docker running
 services:
-		- docker
+    - docker
 
 # Commands to be executed before running tests or deploying the project
 before_install:
-		# build image using Dockerfile.dev
-		- docker build -t rawanad/docker-react -f Dockerfile.dev .
+    # build image using Dockerfile.dev
+    - docker build -t rawanad/docker-react -f Dockerfile.dev .
 
 # Commands to be executed to run the test suite
 script:
-		# -- --coverage: automatically exits when the test suite is done
-		#- docker run rawanad/docker-react npm run test -- --coverage
-		- docker run -e CI=true rawanad/docker-react npm run test
-
+    # -- --coverage: automatically exits when the test suite is done
+    #- docker run rawanad/docker-react npm run test -- --coverage
+    - docker run -e CI=true rawanad/docker-react npm run test
