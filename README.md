@@ -1,4 +1,4 @@
-# To check the website
+# Check the website
 
 http://localhost:3000/
 
