@@ -18,3 +18,23 @@ script:
     # -- --coverage: automatically exits when the test suite is done
     #- docker run rawanad/docker-react npm run test -- --coverage
     - docker run -e CI=true rawanad/docker-react npm run test
+
+# Deploy app tp AWS
+deploy:
+    provider: elasticbeanstalk
+    region: 'us-east-1'
+    # name specified on AWS
+    app: 'docker-react'
+    # environment specified on AWS
+    env: 'Dockerreact-env'
+    # in servies, search for S3 and choose the bucket based on location
+    bucker_name: 'elasticbeanstalk-us-east-1-609456652928'
+    # app name
+    bucker_path: 'docker-react'
+    # deploy when I push code to branch master
+    on:
+        branch: master
+    # Keys defined on Travis
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key:
+        secure: '$AWS_SECRET_KEY'
