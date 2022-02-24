@@ -1,7 +1,3 @@
-# Check the website
-
-http://localhost:3000
-
 # Docker
 
 ## Available Scripts for Docker
@@ -18,7 +14,7 @@ Builds the image from production Dockerfile (Dockerfile)
 
 ### `docker run -p 3000:3000 <image-id>`
 
-Runs a container
+Runs a container on port 3000
 
 ## Docker volume to change container whenever code is changed
 

@@ -23,6 +23,9 @@ RUN npm run build
 # https://hub.docker.com/_/nginx
 FROM nginx
 
+# Elastic beanstalk will look for this instruction and will map to this port (NOT REQUIRED ANYMORE)
+#EXPOSE 80
+
 # Copy build folder from other phase called builder to /user/share/nginx/html
 COPY --from=builder /app/build /usr/share/nginx/html
 
