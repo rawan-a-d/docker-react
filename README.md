@@ -1,3 +1,24 @@
+# To build the image from Dockerfile
+
+docker build -f Dockerfile.dev .
+
+# To run a container
+
+docker run -p 3000:3000 <image-id>
+
+# To check the website
+
+http://localhost:3000/
+
+# Docker volume to change container whenever code is changed
+
+<!--Docker run -p 3000:3000 -v /app/node_modules -v $(pwd):/app <image_id>-->
+
+1. update Dockerfile
+2. move folder to Linux using wsl
+3. docker build -f Dockerfile.dev -t rawan:frontend .
+4. docker run -it -p 3000:3000 -v /home/node/app/node_modules -v ~/frontend:/home/node/app <IMAGE_ID>
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

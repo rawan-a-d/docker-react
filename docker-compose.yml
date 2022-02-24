@@ -1,0 +1,32 @@
+# Shorthand with Docker Compose
+version: '3'
+services:
+    # React
+    web:
+        # Looks for a file called Dockerfile
+        #build: .
+
+        # Look in the current directory,
+        # find the file with this name and use it to build the image
+        build:
+            context: .
+            dockerfile: Dockerfile.dev
+        ports:
+            - '3000:3000'
+        volumes:
+            - /home/node/app/node_modules
+            # current folder:folde in container
+            - .:/home/node/app
+
+    # Tests
+    test:
+        # Look in the current directory,
+        # find the file with this name and use it to build the image
+        build:
+            context: .
+            dockerfile: Dockerfile.dev
+        volumes:
+            - /home/node/app/node_modules
+            # current folder:folde in container
+            - .:/home/node/app
+        command: ['npm', 'run', 'test']
