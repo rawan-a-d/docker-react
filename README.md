@@ -1,23 +1,33 @@
-# To build the image from Dockerfile
-
-docker build -f Dockerfile.dev .
-
-# To run a container
-
-docker run -p 3000:3000 <image-id>
-
 # To check the website
 
 http://localhost:3000/
 
-# Docker volume to change container whenever code is changed
+# Docker
+
+## Available Scripts for Docker
+
+In the project directory, you can run:
+
+### `docker build -f Dockerfile.dev .`
+
+Builds the image from development Dockerfile (Dockerfile.dev)
+
+### `docker build .`
+
+Builds the image from production Dockerfile (Dockerfile)
+
+### `docker run -p 3000:3000 <image-id>`
+
+Runs a container
+
+## Docker volume to change container whenever code is changed
 
 <!--Docker run -p 3000:3000 -v /app/node_modules -v $(pwd):/app <image_id>-->
 
 1. update Dockerfile
-2. move folder to Linux using wsl
-3. docker build -f Dockerfile.dev -t rawan:frontend .
-4. docker run -it -p 3000:3000 -v /home/node/app/node_modules -v ~/frontend:/home/node/app <IMAGE_ID>
+2. move project folder to Linux using wsl
+3. docker build -f Dockerfile.dev -t {Username}:{project-folder-name} .
+4. docker run -it -p 3000:3000 -v /home/node/app/node_modules -v ~/{project-folder-name}:/home/node/app <image-id>
 
 # Getting Started with Create React App
 
